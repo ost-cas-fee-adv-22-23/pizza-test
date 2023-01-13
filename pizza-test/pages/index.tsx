@@ -1,11 +1,14 @@
 import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
-import styles from '../styles/Home.module.css'
+import React from 'react'
+import Link from 'next/link'
+// TODO get imports working.. 
 
-const inter = Inter({ subsets: ['latin'] })
+import { Headline, Button, Icon, Label, Image, ImageOverlay } from '@smartive-education/pizza-hawaii'
+import Atoms from './atoms/atoms'
+import SimpleNav from './simpleNav'
 
 export default function Home() {
+
   return (
     <>
       <Head>
@@ -14,14 +17,23 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={styles.main}>
-        <div className={styles.description}>
-            <h2 className={inter.className}>
-             Hi There! - Pizza Hawaii testpage 
-            </h2>
-            <p className={inter.className}>
-              Learn how to integrate our fancy hawaii design lib
-            </p>
+      <main >
+        <div>
+            <h2>Pizza Hawaii testpage </h2>
+            <div>
+            <SimpleNav />
+            <Headline level={2} >Hi there <Icon name='heart_filled' size='L' /></Headline>
+            <br />
+
+            export default Home
+            <Label as='p' size='M'>Welcome to testing Area</Label>
+            
+            <Button size='M' as='button' color='violet' icon='heart' >Button text</Button>
+            <br />
+            <Image src='//picsum.photos/id/28/1600/1587/' preset='post' alt='this is the alt text'/>
+            <br />
+            <ImageOverlay icon='share' overlayStyles='rounded-2xl' src='//picsum.photos/id/88/1610/1477/' />
+            </div>
         </div>
       </main>
     </>
